@@ -1,0 +1,17 @@
+.link{
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+body{
+    background-color: grey;
+}
+.num{
+width:300px;
+    
+}
+h1{
+    text-align: center;
+}
