@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio de Projetos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+            color: #333;
+        }
+        header h1 {
+            color: #1a73e8;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .num {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+        .link {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .link:hover {
+            background-color: #1557b0;
+        }
+        .card p {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meus Projetos e Desafios</h1>
+    </header>
+    
+    <div class="container">
+        <!-- Projeto 1 -->
+        <div class="card">
+            <a class="link" href="analisador de numero/desafio01.html">Abrir Projeto</a>
+            <img class="num" src="analisador de numero.png" alt="Analisador de Números">
+            <p>Analisador de Números</p>
+        </div>
+
+        <!-- Projeto 2 -->
+        <div class="card">
+            <a class="link" href="idade ok/desafio01.html">Abrir Projeto</a>
+            <img class="num" src="idade.png" alt="Verificador de Idade">
+            <p>Verificador de Idade</p>
+        </div>
+
+        <!-- Projeto 3 -->
+        <div class="card">
+            <a class="link" href="horario ok/desafio01.html">Abrir Projeto</a>
+            <img class="num" src="horario.png" alt="Verificador de Horário">
+            <p>Verificador de Horário</p>
+        </div>
+
+        <!-- Projeto 4 -->
+        <div class="card">
+            <a class="link" href="desafiopt5/desafio01.html">Abrir Projeto</a>
+            <img class="num" src="poesia.jpg" alt="Desafio Parte 5">
+            <p>Desafio Parte 5</p>
+        </div>
+
+        <!-- Projeto 5 -->
+        <div class="card">
+            <a class="link" href="https://alexandregomesbrasil.github.io/site-android/" target="_blank">Abrir Projeto</a>
+            <img class="num" src="andoidcomf.jpg" alt="Site Android">
+            <p>Site Android (Externo)</p>
+        </div>
+
+        <!-- Projeto 6 -->
+        <div class="card">
+            <a class="link" href="#">Em breve</a>
+            <img class="num" src="tabuada.png" alt="Tabuada">
+            <p>Tabuada</p>
+        </div>
+    </div>
+</body>
+</html>

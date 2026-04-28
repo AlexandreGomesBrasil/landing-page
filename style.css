@@ -1,0 +1,29 @@
+
+.link{
+    background-color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body{
+    background-color: grey;
+    
+}
+a{
+    border-radius: 10px 10px 0px 0px ;
+}
+.num{
+max-height: 600px;
+border-radius: 0px 0px 10px 10px;
+max-width: 500px;
+margin: auto;
+
+    
+}
+h1{
+    text-align: center;
+}
+img{
+ 
+}
+
