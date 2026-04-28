@@ -2,120 +2,582 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio de Projetos</title>
+    <title>Alexandre Gomes Brasil | Desenvolvedor Web</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+        * {
             margin: 0;
-            padding: 40px 20px;
-            text-align: center;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
         }
-        header h1 {
-            color: #1a73e8;
-            margin-bottom: 40px;
-            font-size: 2.5em;
+
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #1557b0;
+            --secondary: #34a853;
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border: #dadce0;
         }
-        .container {
-            max-width: 1000px;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            padding: 1rem 2rem;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
         }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .num {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            margin: 15px 0;
-            border-radius: 10px;
-            border: 1px solid #eee;
-        }
-        .link {
-            display: inline-block;
-            padding: 10px 25px;
-            background-color: #1a73e8;
-            color: white;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
-            border-radius: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
         }
-        .link:hover {
-            background-color: #1557b0;
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
         }
-        .card p {
-            font-weight: bold;
-            margin-top: 10px;
-            font-size: 1.1em;
+
+        .btn-primary:hover {
+            background: #2d8e47;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg-white);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid var(--border);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Meus Projetos e Desafios</h1>
+        <nav>
+            <a href="#" class="logo">AG</a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <div class="container">
-        <!-- Projeto 1 -->
-        <div class="card">
-            <a class="link" href="analisador de numero/desafio01.html">Abrir Projeto</a>
-            <img class="num" src="analisador de numero.png" alt="Analisador de Números">
-            <p>Analisador de Números</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Olá, sou Alexandre Gomes Brasil</h1>
+            <p>Desenvolvedor Web apaixonado por criar experiências digitais incríveis</p>
+            <div class="cta-buttons">
+                <a href="#projetos" class="btn btn-primary">Ver Meus Projetos</a>
+                <a href="#contato" class="btn btn-secondary">Entrar em Contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Desenvolvedor em Crescimento</h2>
+                <p>
+                    Sou um desenvolvedor web em constante evolução, dedicado a aprender as melhores práticas e tecnologias mais recentes. Com experiência em HTML, CSS e JavaScript, estou construindo uma base sólida para uma carreira de sucesso na tecnologia.
+                </p>
+                <p>
+                    Minha jornada começou com curiosidade e determinação, e cada projeto que desenvolvo é uma oportunidade de aprender e crescer. Acredito que a prática consistente e o estudo contínuo são as chaves para se tornar um excelente desenvolvedor.
+                </p>
+                <div class="skills">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Responsividade</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Design Web</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <div style="width: 300px; height: 300px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem;">
+                    💻
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projetos">
+        <div class="projects-container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="projects-grid">
+                <!-- Projeto 1 -->
+                <div class="project-card">
+                    <div class="project-image">🎯</div>
+                    <div class="project-content">
+                        <h3>Desafios de Lógica</h3>
+                        <p>Resolução de desafios de programação incluindo Fibonacci e manipulação de strings com JavaScript puro.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Lógica</span>
+                        </div>
+                        <a href="desafio-Target/" class="project-link">Ver Projeto →</a>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="project-card">
+                    <div class="project-image">📱</div>
+                    <div class="project-content">
+                        <h3>Site Android</h3>
+                        <p>Site responsivo com tema Android. Demonstra domínio de CSS avançado e design responsivo.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">Responsivo</span>
+                        </div>
+                        <a href="site-android/" class="project-link">Ver Projeto →</a>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="project-card">
+                    <div class="project-image">📜</div>
+                    <div class="project-content">
+                        <h3>Projeto Cordel Moderno</h3>
+                        <p>Página interativa com estilização avançada. Explora técnicas modernas de CSS e design responsivo.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">Design</span>
+                        </div>
+                        <a href="projeto-cordel/" class="project-link">Ver Projeto →</a>
+                    </div>
+                </div>
+
+                <!-- Projeto 4 -->
+                <div class="project-card">
+                    <div class="project-image">📚</div>
+                    <div class="project-content">
+                        <h3>Aulas e Exercícios</h3>
+                        <p>Repositório com mais de 20 exercícios progressivos de HTML e CSS, documentando minha jornada de aprendizado.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">Educação</span>
+                        </div>
+                        <a href="Aulas-HTML-CSS/" class="project-link">Ver Projeto →</a>
+                    </div>
+                </div>
+
+                <!-- Projeto 5 -->
+                <div class="project-card">
+                    <div class="project-image">🎬</div>
+                    <div class="project-content">
+                        <h3>Vídeos Bíblicos</h3>
+                        <p>Série de vídeos profissionais com narração e ilustrações artísticas sobre passagens bíblicas inspiradoras.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Produção</span>
+                            <span class="tech-badge">Criativo</span>
+                        </div>
+                        <a href="#" class="project-link">Saiba Mais →</a>
+                    </div>
+                </div>
+
+                <!-- Projeto 6 -->
+                <div class="project-card">
+                    <div class="project-image">🚀</div>
+                    <div class="project-content">
+                        <h3>Mais em Breve</h3>
+                        <p>Estou constantemente desenvolvendo novos projetos e aprendendo novas tecnologias. Fique atento!</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Em Desenvolvimento</span>
+                        </div>
+                        <a href="#contato" class="project-link">Acompanhe →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <h2>Vamos Conversar?</h2>
+        <p style="color: var(--text-light); margin-bottom: 2rem;">Estou sempre aberto a novas oportunidades e colaborações</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a>
+            </div>
+            <div class="contact-item">
+                <span>💼</span>
+                <a href="https://linkedin.com/in/seu-perfil" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <span>🐙</span>
+                <a href="https://github.com/AlexandreGomesBrasil" target="_blank">GitHub</a>
+            </div>
         </div>
 
-        <!-- Projeto 2 -->
-        <div class="card">
-            <a class="link" href="idade ok/desafio01.html">Abrir Projeto</a>
-            <img class="num" src="idade.png" alt="Verificador de Idade">
-            <p>Verificador de Idade</p>
+        <div class="social-links">
+            <a href="https://github.com/AlexandreGomesBrasil" target="_blank" class="social-link" title="GitHub">
+                🐙
+            </a>
+            <a href="https://linkedin.com/in/seu-perfil" target="_blank" class="social-link" title="LinkedIn">
+                💼
+            </a>
+            <a href="mailto:seu-email@exemplo.com" class="social-link" title="Email">
+                📧
+            </a>
         </div>
+    </section>
 
-        <!-- Projeto 3 -->
-        <div class="card">
-            <a class="link" href="horario ok/desafio01.html">Abrir Projeto</a>
-            <img class="num" src="horario.png" alt="Verificador de Horário">
-            <p>Verificador de Horário</p>
-        </div>
-
-        <!-- Projeto 4 -->
-        <div class="card">
-            <a class="link" href="desafiopt5/desafio01.html">Abrir Projeto</a>
-            <img class="num" src="poesia.jpg" alt="Desafio Parte 5">
-            <p>Desafio Parte 5</p>
-        </div>
-
-        <!-- Projeto 5 -->
-        <div class="card">
-            <a class="link" href="https://alexandregomesbrasil.github.io/site-android/" target="_blank">Abrir Projeto</a>
-            <img class="num" src="andoidcomf.jpg" alt="Site Android">
-            <p>Site Android (Externo)</p>
-        </div>
-
-        <!-- Projeto 6 -->
-        <div class="card">
-            <a class="link" href="#">Em breve</a>
-            <img class="num" src="tabuada.png" alt="Tabuada">
-            <p>Tabuada</p>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Alexandre Gomes Brasil. Todos os direitos reservados.</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">Desenvolvido com ❤️ e muita dedicação</p>
+    </footer>
 </body>
 </html>
